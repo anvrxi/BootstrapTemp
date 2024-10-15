@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/custom.css"> <!-- Link to the custom CSS file -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Link to Tailwind CSS via CDN -->
+    <link rel="stylesheet" href="../css/main.css"> <!-- Link to the custom CSS file -->
+    <link rel="stylesheet" href="../css/background.css"> <!-- Correct link to the background CSS file -->
+    <link rel ="stylesheet" href="../css/header.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Link to Bootstrap CSS -->
-    
-    <title>Title</title>
-</head>
-<body>
-    <div class="bg-image">
-        <div class="brand"> 
-            <img src="../assets/logocomp.png" alt="Company Logo" class="logo"> 
-            <span class="brand-name text-green-600">Rambo</span> <!-- Tailwind CSS class for text color -->
-        </div>
-        <div class="content">
-            <p class="TTnorms huge">The brand that <em class="text-green-500">innovates</em> technology</p>
-            <h1 class="bold huge">Rambo <em class="text-green-500">X90+</em></h1>
-            
-            <img src="../assets/phone.jpg" alt="Phone" class="phone"> <!-- Image of phone -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
 
-            <!-- Custom buttons -->
+    <title>Rambo X90+</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Wave background animation -->
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+
+    <div class="bg-image">
+        <div class="content text-center"> <!-- Center the content -->
+            <p class="TTnorms huge text-light">The brand that <em class="text-success">innovates</em> technology</p>
+            <h1 class="bold huge text-light">Rambo <em class="text-success">X90+</em></h1>
+
+            <img src="../assets/phone.jpg" alt="Phone" class="phone img-fluid my-4"> <!-- Image of phone with margin -->
+
+            <!-- Custom buttons with styling -->
             <div class="mt-4">
-                <button class="btn primary-btn">Order now</button>
-                <button class="btn secondary-btn">View more details</button>
+                <button class="btn btn-success me-2">Order Now</button>
+                <button class="btn btn-outline-light">View More Details</button>
             </div>
         </div>
     </div>
@@ -33,5 +41,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Include the header dynamically -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 </body>
 </html>
