@@ -26,8 +26,8 @@ nav a {
     font-weight: bold; /* Bold text */
 }
 
-.btn-success {
-    background-color: #28a745; /* Green background */
+.btn-default {
+    background-color: #4c1d7c; /* Green background */
 }
 
 .btn-danger {
